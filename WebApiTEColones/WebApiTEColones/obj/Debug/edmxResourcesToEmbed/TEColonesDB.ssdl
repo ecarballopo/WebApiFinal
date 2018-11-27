@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TEColonesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="IdAdmi" />
+    </Key>
+    <Property Name="IdAdmi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdInformacionBasica" Type="int" Nullable="false" />
+    <Property Name="IdDepartamento" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CambioBeneficioEstudiante">
+    <Key>
+      <PropertyRef Name="IdCambioBeneficioEstudiante" />
+    </Key>
+    <Property Name="IdCambioBeneficioEstudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdHistorialTipoBeneficio" Type="int" Nullable="false" />
+    <Property Name="IdEstudiante" Type="int" Nullable="false" />
+    <Property Name="TecolonesCambio" Type="float" Nullable="false" />
+    <Property Name="ColonesAdquiridos" Type="float" Nullable="false" />
+    <Property Name="FechaCambio" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CambioMaterialEstudiante">
+    <Key>
+      <PropertyRef Name="IdCambioMaterialEstudiante" />
+    </Key>
+    <Property Name="IdCambioMaterialEstudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdHistorialTipoMaterial" Type="int" Nullable="false" />
+    <Property Name="IdEstudiante" Type="int" Nullable="false" />
+    <Property Name="IdEncargadoCentroAcopio" Type="int" Nullable="false" />
+    <Property Name="IdHistorialPromocion" Type="int" />
+    <Property Name="FechaCambio" Type="date" Nullable="false" />
+    <Property Name="PesoReciclaje" Type="float" Nullable="false" />
+    <Property Name="TecolonesAdquiridos" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CentroAcopio">
+    <Key>
+      <PropertyRef Name="IdCentroAcopio" />
+    </Key>
+    <Property Name="IdCentroAcopio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ubicacion" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="IdSedeXTEC" Type="int" Nullable="false" />
+    <Property Name="Identificador" Type="varchar" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="IdDepartamento" />
+    </Key>
+    <Property Name="IdDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreDepartamento" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EncargadoCentroAcopio">
+    <Key>
+      <PropertyRef Name="IdEncargadoCentroAcopio" />
+    </Key>
+    <Property Name="IdEncargadoCentroAcopio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdInformacionBasica" Type="int" Nullable="false" />
+    <Property Name="IdCentroAcopio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estudiante">
+    <Key>
+      <PropertyRef Name="IdEstudiante" />
+    </Key>
+    <Property Name="IdEstudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaIncorporacion" Type="date" Nullable="false" />
+    <Property Name="Pasatiempo" Type="text" Nullable="false" />
+    <Property Name="SobreMi" Type="text" />
+    <Property Name="FotoPerfil" Type="image" />
+    <Property Name="IdSedeXTEC" Type="int" Nullable="false" />
+    <Property Name="IdInformacionBasica" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistorialPromocion">
+    <Key>
+      <PropertyRef Name="IdHistorialPromocion" />
+    </Key>
+    <Property Name="IdHistorialPromocion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPromocion" Type="int" Nullable="false" />
+    <Property Name="IdAdmi" Type="int" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" />
+    <Property Name="FechaFin" Type="datetime" />
+    <Property Name="FechaModificacion" Type="date" Nullable="false" />
+    <Property Name="DetalleModificacion" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="HistorialTipoBeneficio">
+    <Key>
+      <PropertyRef Name="IdHistorialTipoBeneficio" />
+    </Key>
+    <Property Name="IdHistorialTipoBeneficio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoBeneficio" Type="int" Nullable="false" />
+    <Property Name="IdAdmi" Type="int" Nullable="false" />
+    <Property Name="CantidadBaseTecolones" Type="float" Nullable="false" />
+    <Property Name="EquivalenciaColones" Type="float" Nullable="false" />
+    <Property Name="FechaModificacion" Type="date" Nullable="false" />
+    <Property Name="DetalleModificacion" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistorialTipoMaterial">
+    <Key>
+      <PropertyRef Name="IdHistorialTipoMaterial" />
+    </Key>
+    <Property Name="IdHistorialTipoMaterial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoMaterial" Type="int" Nullable="false" />
+    <Property Name="IdAdmi" Type="int" Nullable="false" />
+    <Property Name="EquivalenciaTecolones" Type="float" Nullable="false" />
+    <Property Name="PesoBaseMaterial" Type="float" Nullable="false" />
+    <Property Name="FechaModificacion" Type="date" Nullable="false" />
+    <Property Name="DetalleModificacion" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InformacionBasica">
+    <Key>
+      <PropertyRef Name="IdInformacionBasica" />
+    </Key>
+    <Property Name="IdInformacionBasica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrimerApellido" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="SegundoApellido" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdTipoRol" Type="int" Nullable="false" />
+    <Property Name="EstadoCuenta" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InformacionBasicaContacto">
+    <Key>
+      <PropertyRef Name="IdContacto" />
+    </Key>
+    <Property Name="IdContacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdInformacionBasica" Type="int" Nullable="false" />
+    <Property Name="IdTipoContacto" Type="int" Nullable="false" />
+    <Property Name="Contacto" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Promocion">
+    <Key>
+      <PropertyRef Name="IdPromocion" />
+    </Key>
+    <Property Name="IdPromocion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombrePromocion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DescripcionPromocion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EstadoPromocion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SedeXTEC">
+    <Key>
+      <PropertyRef Name="IdSedeXTEC" />
+    </Key>
+    <Property Name="IdSedeXTEC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreSedeXTEC" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UbicacionSede" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoBeneficio">
+    <Key>
+      <PropertyRef Name="IdTipoBeneficio" />
+    </Key>
+    <Property Name="IdTipoBeneficio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreBeneficio" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DescripcionBeneficio" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EstadoBeneficio" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoContacto">
+    <Key>
+      <PropertyRef Name="IdTipoContacto" />
+    </Key>
+    <Property Name="IdTipoContacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreTipoContacto" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoMaterial">
+    <Key>
+      <PropertyRef Name="IdTipoMaterial" />
+    </Key>
+    <Property Name="IdTipoMaterial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreTipoMaterial" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CaracteristicaMaterial" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EstadoMaterial" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoRol">
+    <Key>
+      <PropertyRef Name="IdTipoRol" />
+    </Key>
+    <Property Name="IdTipoRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreRol" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CambioBeneficioEstudiante_Estudiante">
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+    <End Role="CambioBeneficioEstudiante" Type="Self.CambioBeneficioEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudiante">
+        <PropertyRef Name="IdEstudiante" />
+      </Principal>
+      <Dependent Role="CambioBeneficioEstudiante">
+        <PropertyRef Name="IdEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CambioBeneficioEstudiante_HistorialTipoBeneficio">
+    <End Role="HistorialTipoBeneficio" Type="Self.HistorialTipoBeneficio" Multiplicity="1" />
+    <End Role="CambioBeneficioEstudiante" Type="Self.CambioBeneficioEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialTipoBeneficio">
+        <PropertyRef Name="IdHistorialTipoBeneficio" />
+      </Principal>
+      <Dependent Role="CambioBeneficioEstudiante">
+        <PropertyRef Name="IdHistorialTipoBeneficio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CambioMaterialEstudiante_EncargadoCentroAcopio">
+    <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="1" />
+    <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EncargadoCentroAcopio">
+        <PropertyRef Name="IdEncargadoCentroAcopio" />
+      </Principal>
+      <Dependent Role="CambioMaterialEstudiante">
+        <PropertyRef Name="IdEncargadoCentroAcopio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CambioMaterialEstudiante_Estudiante">
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+    <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudiante">
+        <PropertyRef Name="IdEstudiante" />
+      </Principal>
+      <Dependent Role="CambioMaterialEstudiante">
+        <PropertyRef Name="IdEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CambioMaterialEstudiante_HistorialPromocion">
+    <End Role="HistorialPromocion" Type="Self.HistorialPromocion" Multiplicity="0..1" />
+    <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialPromocion">
+        <PropertyRef Name="IdHistorialPromocion" />
+      </Principal>
+      <Dependent Role="CambioMaterialEstudiante">
+        <PropertyRef Name="IdHistorialPromocion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CambioMaterialEstudiante_HistorialTipoMaterial">
+    <End Role="HistorialTipoMaterial" Type="Self.HistorialTipoMaterial" Multiplicity="1" />
+    <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialTipoMaterial">
+        <PropertyRef Name="IdHistorialTipoMaterial" />
+      </Principal>
+      <Dependent Role="CambioMaterialEstudiante">
+        <PropertyRef Name="IdHistorialTipoMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CentroAcopio_SedeXTEC">
+    <End Role="SedeXTEC" Type="Self.SedeXTEC" Multiplicity="1" />
+    <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SedeXTEC">
+        <PropertyRef Name="IdSedeXTEC" />
+      </Principal>
+      <Dependent Role="CentroAcopio">
+        <PropertyRef Name="IdSedeXTEC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DatoAdminastrador_Departamento">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="IdDepartamento" />
+      </Principal>
+      <Dependent Role="Administrador">
+        <PropertyRef Name="IdDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DatoAdminastrador_InformacionBasica">
+    <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InformacionBasica">
+        <PropertyRef Name="IdInformacionBasica" />
+      </Principal>
+      <Dependent Role="Administrador">
+        <PropertyRef Name="IdInformacionBasica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EncargadoCentroAcopio_CentroAcopio">
+    <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="1" />
+    <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CentroAcopio">
+        <PropertyRef Name="IdCentroAcopio" />
+      </Principal>
+      <Dependent Role="EncargadoCentroAcopio">
+        <PropertyRef Name="IdCentroAcopio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EncargadoCentroAcopio_InformacionBasica">
+    <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+    <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InformacionBasica">
+        <PropertyRef Name="IdInformacionBasica" />
+      </Principal>
+      <Dependent Role="EncargadoCentroAcopio">
+        <PropertyRef Name="IdInformacionBasica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estudiante_InformacionBasica">
+    <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InformacionBasica">
+        <PropertyRef Name="IdInformacionBasica" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="IdInformacionBasica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estudiante_SedeXTEC">
+    <End Role="SedeXTEC" Type="Self.SedeXTEC" Multiplicity="1" />
+    <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SedeXTEC">
+        <PropertyRef Name="IdSedeXTEC" />
+      </Principal>
+      <Dependent Role="Estudiante">
+        <PropertyRef Name="IdSedeXTEC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialPromocion_DatoAdminastrador">
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="1" />
+    <End Role="HistorialPromocion" Type="Self.HistorialPromocion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="IdAdmi" />
+      </Principal>
+      <Dependent Role="HistorialPromocion">
+        <PropertyRef Name="IdAdmi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialPromocion_Promocion">
+    <End Role="Promocion" Type="Self.Promocion" Multiplicity="1" />
+    <End Role="HistorialPromocion" Type="Self.HistorialPromocion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promocion">
+        <PropertyRef Name="IdPromocion" />
+      </Principal>
+      <Dependent Role="HistorialPromocion">
+        <PropertyRef Name="IdPromocion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialTipoBeneficio_DatoAdminastrador1">
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="1" />
+    <End Role="HistorialTipoBeneficio" Type="Self.HistorialTipoBeneficio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="IdAdmi" />
+      </Principal>
+      <Dependent Role="HistorialTipoBeneficio">
+        <PropertyRef Name="IdAdmi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialTipoBeneficio_TipoBeneficio1">
+    <End Role="TipoBeneficio" Type="Self.TipoBeneficio" Multiplicity="1" />
+    <End Role="HistorialTipoBeneficio" Type="Self.HistorialTipoBeneficio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoBeneficio">
+        <PropertyRef Name="IdTipoBeneficio" />
+      </Principal>
+      <Dependent Role="HistorialTipoBeneficio">
+        <PropertyRef Name="IdTipoBeneficio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialTipoMaterial_DatoAdminastrador">
+    <End Role="Administrador" Type="Self.Administrador" Multiplicity="1" />
+    <End Role="HistorialTipoMaterial" Type="Self.HistorialTipoMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="IdAdmi" />
+      </Principal>
+      <Dependent Role="HistorialTipoMaterial">
+        <PropertyRef Name="IdAdmi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialTipoMaterial_TipoMaterial">
+    <End Role="TipoMaterial" Type="Self.TipoMaterial" Multiplicity="1" />
+    <End Role="HistorialTipoMaterial" Type="Self.HistorialTipoMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMaterial">
+        <PropertyRef Name="IdTipoMaterial" />
+      </Principal>
+      <Dependent Role="HistorialTipoMaterial">
+        <PropertyRef Name="IdTipoMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InformacionBasica_TipoRol">
+    <End Role="TipoRol" Type="Self.TipoRol" Multiplicity="1" />
+    <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoRol">
+        <PropertyRef Name="IdTipoRol" />
+      </Principal>
+      <Dependent Role="InformacionBasica">
+        <PropertyRef Name="IdTipoRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InformacionBasicaContacto_InformacionBasica">
+    <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+    <End Role="InformacionBasicaContacto" Type="Self.InformacionBasicaContacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InformacionBasica">
+        <PropertyRef Name="IdInformacionBasica" />
+      </Principal>
+      <Dependent Role="InformacionBasicaContacto">
+        <PropertyRef Name="IdInformacionBasica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InformacionBasicaContacto_TipoContacto">
+    <End Role="TipoContacto" Type="Self.TipoContacto" Multiplicity="1" />
+    <End Role="InformacionBasicaContacto" Type="Self.InformacionBasicaContacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoContacto">
+        <PropertyRef Name="IdTipoContacto" />
+      </Principal>
+      <Dependent Role="InformacionBasicaContacto">
+        <PropertyRef Name="IdTipoContacto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TEColonesModelStoreContainer">
+    <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CambioBeneficioEstudiante" EntityType="Self.CambioBeneficioEstudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CambioMaterialEstudiante" EntityType="Self.CambioMaterialEstudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CentroAcopio" EntityType="Self.CentroAcopio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EncargadoCentroAcopio" EntityType="Self.EncargadoCentroAcopio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudiante" EntityType="Self.Estudiante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistorialPromocion" EntityType="Self.HistorialPromocion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistorialTipoBeneficio" EntityType="Self.HistorialTipoBeneficio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistorialTipoMaterial" EntityType="Self.HistorialTipoMaterial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InformacionBasica" EntityType="Self.InformacionBasica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InformacionBasicaContacto" EntityType="Self.InformacionBasicaContacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promocion" EntityType="Self.Promocion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SedeXTEC" EntityType="Self.SedeXTEC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoBeneficio" EntityType="Self.TipoBeneficio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoContacto" EntityType="Self.TipoContacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoMaterial" EntityType="Self.TipoMaterial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoRol" EntityType="Self.TipoRol" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CambioBeneficioEstudiante_Estudiante" Association="Self.FK_CambioBeneficioEstudiante_Estudiante">
+      <End Role="Estudiante" EntitySet="Estudiante" />
+      <End Role="CambioBeneficioEstudiante" EntitySet="CambioBeneficioEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CambioBeneficioEstudiante_HistorialTipoBeneficio" Association="Self.FK_CambioBeneficioEstudiante_HistorialTipoBeneficio">
+      <End Role="HistorialTipoBeneficio" EntitySet="HistorialTipoBeneficio" />
+      <End Role="CambioBeneficioEstudiante" EntitySet="CambioBeneficioEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CambioMaterialEstudiante_EncargadoCentroAcopio" Association="Self.FK_CambioMaterialEstudiante_EncargadoCentroAcopio">
+      <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopio" />
+      <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CambioMaterialEstudiante_Estudiante" Association="Self.FK_CambioMaterialEstudiante_Estudiante">
+      <End Role="Estudiante" EntitySet="Estudiante" />
+      <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CambioMaterialEstudiante_HistorialPromocion" Association="Self.FK_CambioMaterialEstudiante_HistorialPromocion">
+      <End Role="HistorialPromocion" EntitySet="HistorialPromocion" />
+      <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CambioMaterialEstudiante_HistorialTipoMaterial" Association="Self.FK_CambioMaterialEstudiante_HistorialTipoMaterial">
+      <End Role="HistorialTipoMaterial" EntitySet="HistorialTipoMaterial" />
+      <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CentroAcopio_SedeXTEC" Association="Self.FK_CentroAcopio_SedeXTEC">
+      <End Role="SedeXTEC" EntitySet="SedeXTEC" />
+      <End Role="CentroAcopio" EntitySet="CentroAcopio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DatoAdminastrador_Departamento" Association="Self.FK_DatoAdminastrador_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Administrador" EntitySet="Administrador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DatoAdminastrador_InformacionBasica" Association="Self.FK_DatoAdminastrador_InformacionBasica">
+      <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+      <End Role="Administrador" EntitySet="Administrador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EncargadoCentroAcopio_CentroAcopio" Association="Self.FK_EncargadoCentroAcopio_CentroAcopio">
+      <End Role="CentroAcopio" EntitySet="CentroAcopio" />
+      <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EncargadoCentroAcopio_InformacionBasica" Association="Self.FK_EncargadoCentroAcopio_InformacionBasica">
+      <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+      <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estudiante_InformacionBasica" Association="Self.FK_Estudiante_InformacionBasica">
+      <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estudiante_SedeXTEC" Association="Self.FK_Estudiante_SedeXTEC">
+      <End Role="SedeXTEC" EntitySet="SedeXTEC" />
+      <End Role="Estudiante" EntitySet="Estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialPromocion_DatoAdminastrador" Association="Self.FK_HistorialPromocion_DatoAdminastrador">
+      <End Role="Administrador" EntitySet="Administrador" />
+      <End Role="HistorialPromocion" EntitySet="HistorialPromocion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialPromocion_Promocion" Association="Self.FK_HistorialPromocion_Promocion">
+      <End Role="Promocion" EntitySet="Promocion" />
+      <End Role="HistorialPromocion" EntitySet="HistorialPromocion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialTipoBeneficio_DatoAdminastrador1" Association="Self.FK_HistorialTipoBeneficio_DatoAdminastrador1">
+      <End Role="Administrador" EntitySet="Administrador" />
+      <End Role="HistorialTipoBeneficio" EntitySet="HistorialTipoBeneficio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialTipoBeneficio_TipoBeneficio1" Association="Self.FK_HistorialTipoBeneficio_TipoBeneficio1">
+      <End Role="TipoBeneficio" EntitySet="TipoBeneficio" />
+      <End Role="HistorialTipoBeneficio" EntitySet="HistorialTipoBeneficio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialTipoMaterial_DatoAdminastrador" Association="Self.FK_HistorialTipoMaterial_DatoAdminastrador">
+      <End Role="Administrador" EntitySet="Administrador" />
+      <End Role="HistorialTipoMaterial" EntitySet="HistorialTipoMaterial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialTipoMaterial_TipoMaterial" Association="Self.FK_HistorialTipoMaterial_TipoMaterial">
+      <End Role="TipoMaterial" EntitySet="TipoMaterial" />
+      <End Role="HistorialTipoMaterial" EntitySet="HistorialTipoMaterial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InformacionBasica_TipoRol" Association="Self.FK_InformacionBasica_TipoRol">
+      <End Role="TipoRol" EntitySet="TipoRol" />
+      <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InformacionBasicaContacto_InformacionBasica" Association="Self.FK_InformacionBasicaContacto_InformacionBasica">
+      <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+      <End Role="InformacionBasicaContacto" EntitySet="InformacionBasicaContacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InformacionBasicaContacto_TipoContacto" Association="Self.FK_InformacionBasicaContacto_TipoContacto">
+      <End Role="TipoContacto" EntitySet="TipoContacto" />
+      <End Role="InformacionBasicaContacto" EntitySet="InformacionBasicaContacto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

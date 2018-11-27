@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9df1b7a9b5af4c82a5f945691e89297c" Name="Diagram1">
+        <EntityTypeShape EntityType="TEColonesModel.Administrador" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.BitacoraBeneficio" Width="1.5" PointX="8.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.BitacoraMaterial" Width="1.5" PointX="10.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.BitacoraPromocion" Width="1.5" PointX="10.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.CambioBeneficioEstudiante" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.CambioMaterialEstudiante" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.CentroAcopio" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.Departamento" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.EncargadoCentroAcopio" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.Estudiante" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.InformacionBasica" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.InformacionBasicaContacto" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.Promocion" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.SedeXTEC" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.TipoBeneficio" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.TipoContacto" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.TipoMaterial" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TEColonesModel.TipoRol" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="TEColonesModel.FK_DatoAdminastrador_Departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_DatoAdminastrador_InformacionBasica" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_CambioBeneficioEstudiante_Estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_CambioBeneficioEstudiante_Estudiante1" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_CambioMaterialEstudiante_EncargadoCentroAcopio" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_CambioMaterialEstudiante_Estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_CambioMaterialEstudiante_Promocion" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_CambioMaterialEstudiante_TipoMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_CentroAcopio_SedeXTEC" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_EncargadoCentroAcopio_CentroAcopio" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_EncargadoCentroAcopio_InformacionBasica" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_Estudiante_InformacionBasica" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_Estudiante_SedeXTEC" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_InformacionBasica_TipoRol" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_InformacionBasicaContacto_InformacionBasica" ManuallyRouted="false" />
+        <AssociationConnector Association="TEColonesModel.FK_InformacionBasicaContacto_TipoContacto" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

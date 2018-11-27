@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TEColonesModelStoreContainer" CdmEntityContainer="TEColonesEntities">
+    <EntitySetMapping Name="Administradors">
+      <EntityTypeMapping TypeName="TEColonesModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="IdAdmi" ColumnName="IdAdmi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BitacoraBeneficios">
+      <EntityTypeMapping TypeName="TEColonesModel.BitacoraBeneficio">
+        <MappingFragment StoreEntitySet="BitacoraBeneficio">
+          <ScalarProperty Name="IdBitacoraBeneficio" ColumnName="IdBitacoraBeneficio" />
+          <ScalarProperty Name="Operacion" ColumnName="Operacion" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="BeneficioModificado" ColumnName="BeneficioModificado" />
+          <ScalarProperty Name="DatoViejo" ColumnName="DatoViejo" />
+          <ScalarProperty Name="ColumnaModificada" ColumnName="ColumnaModificada" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BitacoraMaterials">
+      <EntityTypeMapping TypeName="TEColonesModel.BitacoraMaterial">
+        <MappingFragment StoreEntitySet="BitacoraMaterial">
+          <ScalarProperty Name="IdBitacoraMaterial" ColumnName="IdBitacoraMaterial" />
+          <ScalarProperty Name="Operacion" ColumnName="Operacion" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="MaterialModificado" ColumnName="MaterialModificado" />
+          <ScalarProperty Name="DatoViejo" ColumnName="DatoViejo" />
+          <ScalarProperty Name="ColumnaModificada" ColumnName="ColumnaModificada" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BitacoraPromocions">
+      <EntityTypeMapping TypeName="TEColonesModel.BitacoraPromocion">
+        <MappingFragment StoreEntitySet="BitacoraPromocion">
+          <ScalarProperty Name="IdBitacoraPromocion" ColumnName="IdBitacoraPromocion" />
+          <ScalarProperty Name="Operacion" ColumnName="Operacion" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="PromocionModificada" ColumnName="PromocionModificada" />
+          <ScalarProperty Name="DatoViejo" ColumnName="DatoViejo" />
+          <ScalarProperty Name="ColumnaModificada" ColumnName="ColumnaModificada" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CambioBeneficioEstudiantes">
+      <EntityTypeMapping TypeName="TEColonesModel.CambioBeneficioEstudiante">
+        <MappingFragment StoreEntitySet="CambioBeneficioEstudiante">
+          <ScalarProperty Name="IdCambioBeneficioEstudiante" ColumnName="IdCambioBeneficioEstudiante" />
+          <ScalarProperty Name="TecolonesCambio" ColumnName="TecolonesCambio" />
+          <ScalarProperty Name="ColonesAdquiridos" ColumnName="ColonesAdquiridos" />
+          <ScalarProperty Name="FechaCambio" ColumnName="FechaCambio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CambioMaterialEstudiantes">
+      <EntityTypeMapping TypeName="TEColonesModel.CambioMaterialEstudiante">
+        <MappingFragment StoreEntitySet="CambioMaterialEstudiante">
+          <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+          <ScalarProperty Name="FechaCambio" ColumnName="FechaCambio" />
+          <ScalarProperty Name="PesoReciclaje" ColumnName="PesoReciclaje" />
+          <ScalarProperty Name="TecolonesAdquiridos" ColumnName="TecolonesAdquiridos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CentroAcopios">
+      <EntityTypeMapping TypeName="TEColonesModel.CentroAcopio">
+        <MappingFragment StoreEntitySet="CentroAcopio">
+          <ScalarProperty Name="IdCentroAcopio" ColumnName="IdCentroAcopio" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentoes">
+      <EntityTypeMapping TypeName="TEColonesModel.Departamento">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+          <ScalarProperty Name="NombreDepartamento" ColumnName="NombreDepartamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EncargadoCentroAcopios">
+      <EntityTypeMapping TypeName="TEColonesModel.EncargadoCentroAcopio">
+        <MappingFragment StoreEntitySet="EncargadoCentroAcopio">
+          <ScalarProperty Name="IdEncargadoCentroAcopio" ColumnName="IdEncargadoCentroAcopio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estudiantes">
+      <EntityTypeMapping TypeName="TEColonesModel.Estudiante">
+        <MappingFragment StoreEntitySet="Estudiante">
+          <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+          <ScalarProperty Name="FechaIncorporacion" ColumnName="FechaIncorporacion" />
+          <ScalarProperty Name="Pasatiempo" ColumnName="Pasatiempo" />
+          <ScalarProperty Name="SobreMi" ColumnName="SobreMi" />
+          <ScalarProperty Name="FotoPerfil" ColumnName="FotoPerfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InformacionBasicas">
+      <EntityTypeMapping TypeName="TEColonesModel.InformacionBasica">
+        <MappingFragment StoreEntitySet="InformacionBasica">
+          <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="EstadoCuenta" ColumnName="EstadoCuenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InformacionBasicaContactoes">
+      <EntityTypeMapping TypeName="TEColonesModel.InformacionBasicaContacto">
+        <MappingFragment StoreEntitySet="InformacionBasicaContacto">
+          <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promocions">
+      <EntityTypeMapping TypeName="TEColonesModel.Promocion">
+        <MappingFragment StoreEntitySet="Promocion">
+          <ScalarProperty Name="IdPromocion" ColumnName="IdPromocion" />
+          <ScalarProperty Name="NombrePromocion" ColumnName="NombrePromocion" />
+          <ScalarProperty Name="DescripcionPromocion" ColumnName="DescripcionPromocion" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="EstadoPromocion" ColumnName="EstadoPromocion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SedeXTECs">
+      <EntityTypeMapping TypeName="TEColonesModel.SedeXTEC">
+        <MappingFragment StoreEntitySet="SedeXTEC">
+          <ScalarProperty Name="IdSedeXTEC" ColumnName="IdSedeXTEC" />
+          <ScalarProperty Name="NombreSedeXTEC" ColumnName="NombreSedeXTEC" />
+          <ScalarProperty Name="UbicacionSede" ColumnName="UbicacionSede" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoBeneficios">
+      <EntityTypeMapping TypeName="TEColonesModel.TipoBeneficio">
+        <MappingFragment StoreEntitySet="TipoBeneficio">
+          <ScalarProperty Name="IdTipoBeneficio" ColumnName="IdTipoBeneficio" />
+          <ScalarProperty Name="NombreBeneficio" ColumnName="NombreBeneficio" />
+          <ScalarProperty Name="DescripcionBeneficio" ColumnName="DescripcionBeneficio" />
+          <ScalarProperty Name="CantidadBaseTecolones" ColumnName="CantidadBaseTecolones" />
+          <ScalarProperty Name="EstadoBeneficio" ColumnName="EstadoBeneficio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoContactoes">
+      <EntityTypeMapping TypeName="TEColonesModel.TipoContacto">
+        <MappingFragment StoreEntitySet="TipoContacto">
+          <ScalarProperty Name="IdTipoContacto" ColumnName="IdTipoContacto" />
+          <ScalarProperty Name="NombreTipoContacto" ColumnName="NombreTipoContacto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoMaterials">
+      <EntityTypeMapping TypeName="TEColonesModel.TipoMaterial">
+        <MappingFragment StoreEntitySet="TipoMaterial">
+          <ScalarProperty Name="IdTipoMaterial" ColumnName="IdTipoMaterial" />
+          <ScalarProperty Name="NombreTipoMaterial" ColumnName="NombreTipoMaterial" />
+          <ScalarProperty Name="CaracteristicaMaterial" ColumnName="CaracteristicaMaterial" />
+          <ScalarProperty Name="PesoBaseMaterial" ColumnName="PesoBaseMaterial" />
+          <ScalarProperty Name="EquivalenciaTecolones" ColumnName="EquivalenciaTecolones" />
+          <ScalarProperty Name="EstadoMaterial" ColumnName="EstadoMaterial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoRols">
+      <EntityTypeMapping TypeName="TEColonesModel.TipoRol">
+        <MappingFragment StoreEntitySet="TipoRol">
+          <ScalarProperty Name="IdTipoRol" ColumnName="IdTipoRol" />
+          <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_DatoAdminastrador_Departamento" TypeName="TEColonesModel.FK_DatoAdminastrador_Departamento" StoreEntitySet="Administrador">
+      <EndProperty Name="Departamento">
+        <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+      </EndProperty>
+      <EndProperty Name="Administrador">
+        <ScalarProperty Name="IdAdmi" ColumnName="IdAdmi" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_DatoAdminastrador_InformacionBasica" TypeName="TEColonesModel.FK_DatoAdminastrador_InformacionBasica" StoreEntitySet="Administrador">
+      <EndProperty Name="InformacionBasica">
+        <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+      </EndProperty>
+      <EndProperty Name="Administrador">
+        <ScalarProperty Name="IdAdmi" ColumnName="IdAdmi" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CambioBeneficioEstudiante_Estudiante" TypeName="TEColonesModel.FK_CambioBeneficioEstudiante_Estudiante" StoreEntitySet="CambioBeneficioEstudiante">
+      <EndProperty Name="TipoBeneficio">
+        <ScalarProperty Name="IdTipoBeneficio" ColumnName="IdTipoBeneficio" />
+      </EndProperty>
+      <EndProperty Name="CambioBeneficioEstudiante">
+        <ScalarProperty Name="IdCambioBeneficioEstudiante" ColumnName="IdCambioBeneficioEstudiante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CambioBeneficioEstudiante_Estudiante1" TypeName="TEColonesModel.FK_CambioBeneficioEstudiante_Estudiante1" StoreEntitySet="CambioBeneficioEstudiante">
+      <EndProperty Name="Estudiante">
+        <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+      </EndProperty>
+      <EndProperty Name="CambioBeneficioEstudiante">
+        <ScalarProperty Name="IdCambioBeneficioEstudiante" ColumnName="IdCambioBeneficioEstudiante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CambioMaterialEstudiante_EncargadoCentroAcopio" TypeName="TEColonesModel.FK_CambioMaterialEstudiante_EncargadoCentroAcopio" StoreEntitySet="CambioMaterialEstudiante">
+      <EndProperty Name="EncargadoCentroAcopio">
+        <ScalarProperty Name="IdEncargadoCentroAcopio" ColumnName="IdEncargadoCentroAcopio" />
+      </EndProperty>
+      <EndProperty Name="CambioMaterialEstudiante">
+        <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CambioMaterialEstudiante_Estudiante" TypeName="TEColonesModel.FK_CambioMaterialEstudiante_Estudiante" StoreEntitySet="CambioMaterialEstudiante">
+      <EndProperty Name="Estudiante">
+        <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+      </EndProperty>
+      <EndProperty Name="CambioMaterialEstudiante">
+        <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CambioMaterialEstudiante_Promocion" TypeName="TEColonesModel.FK_CambioMaterialEstudiante_Promocion" StoreEntitySet="CambioMaterialEstudiante">
+      <EndProperty Name="Promocion">
+        <ScalarProperty Name="IdPromocion" ColumnName="IdPromocion" />
+      </EndProperty>
+      <EndProperty Name="CambioMaterialEstudiante">
+        <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="IdPromocion" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CambioMaterialEstudiante_TipoMaterial" TypeName="TEColonesModel.FK_CambioMaterialEstudiante_TipoMaterial" StoreEntitySet="CambioMaterialEstudiante">
+      <EndProperty Name="TipoMaterial">
+        <ScalarProperty Name="IdTipoMaterial" ColumnName="IdTipoMaterial" />
+      </EndProperty>
+      <EndProperty Name="CambioMaterialEstudiante">
+        <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CentroAcopio_SedeXTEC" TypeName="TEColonesModel.FK_CentroAcopio_SedeXTEC" StoreEntitySet="CentroAcopio">
+      <EndProperty Name="SedeXTEC">
+        <ScalarProperty Name="IdSedeXTEC" ColumnName="IdSedeXTEC" />
+      </EndProperty>
+      <EndProperty Name="CentroAcopio">
+        <ScalarProperty Name="IdCentroAcopio" ColumnName="IdCentroAcopio" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_EncargadoCentroAcopio_CentroAcopio" TypeName="TEColonesModel.FK_EncargadoCentroAcopio_CentroAcopio" StoreEntitySet="EncargadoCentroAcopio">
+      <EndProperty Name="CentroAcopio">
+        <ScalarProperty Name="IdCentroAcopio" ColumnName="IdCentroAcopio" />
+      </EndProperty>
+      <EndProperty Name="EncargadoCentroAcopio">
+        <ScalarProperty Name="IdEncargadoCentroAcopio" ColumnName="IdEncargadoCentroAcopio" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_EncargadoCentroAcopio_InformacionBasica" TypeName="TEColonesModel.FK_EncargadoCentroAcopio_InformacionBasica" StoreEntitySet="EncargadoCentroAcopio">
+      <EndProperty Name="InformacionBasica">
+        <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+      </EndProperty>
+      <EndProperty Name="EncargadoCentroAcopio">
+        <ScalarProperty Name="IdEncargadoCentroAcopio" ColumnName="IdEncargadoCentroAcopio" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Estudiante_InformacionBasica" TypeName="TEColonesModel.FK_Estudiante_InformacionBasica" StoreEntitySet="Estudiante">
+      <EndProperty Name="InformacionBasica">
+        <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+      </EndProperty>
+      <EndProperty Name="Estudiante">
+        <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Estudiante_SedeXTEC" TypeName="TEColonesModel.FK_Estudiante_SedeXTEC" StoreEntitySet="Estudiante">
+      <EndProperty Name="SedeXTEC">
+        <ScalarProperty Name="IdSedeXTEC" ColumnName="IdSedeXTEC" />
+      </EndProperty>
+      <EndProperty Name="Estudiante">
+        <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_InformacionBasica_TipoRol" TypeName="TEColonesModel.FK_InformacionBasica_TipoRol" StoreEntitySet="InformacionBasica">
+      <EndProperty Name="TipoRol">
+        <ScalarProperty Name="IdTipoRol" ColumnName="IdTipoRol" />
+      </EndProperty>
+      <EndProperty Name="InformacionBasica">
+        <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_InformacionBasicaContacto_InformacionBasica" TypeName="TEColonesModel.FK_InformacionBasicaContacto_InformacionBasica" StoreEntitySet="InformacionBasicaContacto">
+      <EndProperty Name="InformacionBasica">
+        <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+      </EndProperty>
+      <EndProperty Name="InformacionBasicaContacto">
+        <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_InformacionBasicaContacto_TipoContacto" TypeName="TEColonesModel.FK_InformacionBasicaContacto_TipoContacto" StoreEntitySet="InformacionBasicaContacto">
+      <EndProperty Name="TipoContacto">
+        <ScalarProperty Name="IdTipoContacto" ColumnName="IdTipoContacto" />
+      </EndProperty>
+      <EndProperty Name="InformacionBasicaContacto">
+        <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="ActualizarTipo" FunctionName="TEColonesModel.Store.ActualizarTipo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.ActualizarTipo_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CambioBeneficio" FunctionName="TEColonesModel.Store.CambioBeneficio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.CambioBeneficio_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CambioMaterial" FunctionName="TEColonesModel.Store.CambioMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.CambioMaterial_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarAdministrador" FunctionName="TEColonesModel.Store.InsertarAdministrador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarAdministrador_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarAdministradorAcopio" FunctionName="TEColonesModel.Store.InsertarAdministradorAcopio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarAdministradorAcopio_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarCentroAcopio" FunctionName="TEColonesModel.Store.InsertarCentroAcopio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarCentroAcopio_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarContacto" FunctionName="TEColonesModel.Store.InsertarContacto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarContacto_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarDepartamento" FunctionName="TEColonesModel.Store.InsertarDepartamento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarDepartamento_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarEstudiante" FunctionName="TEColonesModel.Store.InsertarEstudiante">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarEstudiante_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarInformacionBasica" FunctionName="TEColonesModel.Store.InsertarInformacionBasica">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarInformacionBasica_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarSedeXTEC" FunctionName="TEColonesModel.Store.InsertarSedeXTEC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarSedeXTEC_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarTipoContacto" FunctionName="TEColonesModel.Store.InsertarTipoContacto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarTipoContacto_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarTipoRol" FunctionName="TEColonesModel.Store.InsertarTipoRol">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.InsertarTipoRol_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NuevaPromocion" FunctionName="TEColonesModel.Store.NuevaPromocion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.NuevaPromocion_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NuevoTipoBeneficio" FunctionName="TEColonesModel.Store.NuevoTipoBeneficio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.NuevoTipoBeneficio_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NuevoTipoMaterial" FunctionName="TEColonesModel.Store.NuevoTipoMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.NuevoTipoMaterial_Result">
+          <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+          <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Tacometro" FunctionName="TEColonesModel.Store.Tacometro" />
+    <FunctionImportMapping FunctionImportName="ColumnaSimple" FunctionName="TEColonesModel.Store.ColumnaSimple">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.ColumnaSimple_Result">
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="PesoTotal" ColumnName="PesoTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FilaApilada" FunctionName="TEColonesModel.Store.FilaApilada">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.FilaApilada_Result">
+          <ScalarProperty Name="NombreBeneficio" ColumnName="NombreBeneficio" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TOP10" FunctionName="TEColonesModel.Store.TOP10">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.TOP10_Result">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Carnet" ColumnName="Carnet" />
+          <ScalarProperty Name="NombreSedeXTEC" ColumnName="NombreSedeXTEC" />
+          <ScalarProperty Name="Cantidad_Material" ColumnName="Cantidad Material" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TEColonesEntregados" FunctionName="TEColonesModel.Store.TEColonesEntregados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.TEColonesEntregados_Result">
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Puntos" ColumnName="Puntos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ToneladasSede" FunctionName="TEColonesModel.Store.ToneladasSede">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TEColonesModel.ToneladasSede_Result">
+          <ScalarProperty Name="Sede" ColumnName="Sede" />
+          <ScalarProperty Name="PesoTotal" ColumnName="PesoTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

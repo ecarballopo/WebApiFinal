@@ -1,0 +1,1648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TEColonesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="IdAdmi" />
+          </Key>
+          <Property Name="IdAdmi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdInformacionBasica" Type="int" Nullable="false" />
+          <Property Name="IdDepartamento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BitacoraBeneficio">
+          <Key>
+            <PropertyRef Name="IdBitacoraBeneficio" />
+          </Key>
+          <Property Name="IdBitacoraBeneficio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Operacion" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BeneficioModificado" Type="varchar" MaxLength="50" />
+          <Property Name="DatoViejo" Type="varchar" MaxLength="50" />
+          <Property Name="ColumnaModificada" Type="varchar" MaxLength="50" />
+          <Property Name="FechaModificacion" Type="date" Nullable="false" />
+          <Property Name="Tabla" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BitacoraMaterial">
+          <Key>
+            <PropertyRef Name="IdBitacoraMaterial" />
+          </Key>
+          <Property Name="IdBitacoraMaterial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Operacion" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialModificado" Type="varchar" MaxLength="50" />
+          <Property Name="DatoViejo" Type="varchar" MaxLength="50" />
+          <Property Name="ColumnaModificada" Type="varchar" MaxLength="50" />
+          <Property Name="FechaModificacion" Type="date" Nullable="false" />
+          <Property Name="Tabla" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BitacoraPromocion">
+          <Key>
+            <PropertyRef Name="IdBitacoraPromocion" />
+          </Key>
+          <Property Name="IdBitacoraPromocion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Operacion" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PromocionModificada" Type="varchar" MaxLength="50" />
+          <Property Name="DatoViejo" Type="varchar" MaxLength="50" />
+          <Property Name="ColumnaModificada" Type="varchar" MaxLength="50" />
+          <Property Name="FechaModificacion" Type="date" Nullable="false" />
+          <Property Name="Tabla" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CambioBeneficioEstudiante">
+          <Key>
+            <PropertyRef Name="IdCambioBeneficioEstudiante" />
+          </Key>
+          <Property Name="IdCambioBeneficioEstudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTipoBeneficio" Type="int" Nullable="false" />
+          <Property Name="IdEstudiante" Type="int" Nullable="false" />
+          <Property Name="TecolonesCambio" Type="float" Nullable="false" />
+          <Property Name="ColonesAdquiridos" Type="float" Nullable="false" />
+          <Property Name="FechaCambio" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CambioMaterialEstudiante">
+          <Key>
+            <PropertyRef Name="IdCambioMaterialEstudiante" />
+          </Key>
+          <Property Name="IdCambioMaterialEstudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTipoMaterial" Type="int" Nullable="false" />
+          <Property Name="IdEstudiante" Type="int" Nullable="false" />
+          <Property Name="IdEncargadoCentroAcopio" Type="int" Nullable="false" />
+          <Property Name="IdPromocion" Type="int" />
+          <Property Name="FechaCambio" Type="date" Nullable="false" />
+          <Property Name="PesoReciclaje" Type="float" Nullable="false" />
+          <Property Name="TecolonesAdquiridos" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CentroAcopio">
+          <Key>
+            <PropertyRef Name="IdCentroAcopio" />
+          </Key>
+          <Property Name="IdCentroAcopio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ubicacion" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IdSedeXTEC" Type="int" Nullable="false" />
+          <Property Name="Identificador" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="IdDepartamento" />
+          </Key>
+          <Property Name="IdDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreDepartamento" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EncargadoCentroAcopio">
+          <Key>
+            <PropertyRef Name="IdEncargadoCentroAcopio" />
+          </Key>
+          <Property Name="IdEncargadoCentroAcopio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdInformacionBasica" Type="int" Nullable="false" />
+          <Property Name="IdCentroAcopio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="IdEstudiante" />
+          </Key>
+          <Property Name="IdEstudiante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaIncorporacion" Type="date" Nullable="false" />
+          <Property Name="Pasatiempo" Type="text" Nullable="false" />
+          <Property Name="SobreMi" Type="text" />
+          <Property Name="FotoPerfil" Type="image" />
+          <Property Name="IdSedeXTEC" Type="int" Nullable="false" />
+          <Property Name="IdInformacionBasica" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InformacionBasica">
+          <Key>
+            <PropertyRef Name="IdInformacionBasica" />
+          </Key>
+          <Property Name="IdInformacionBasica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimerApellido" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="SegundoApellido" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Identificacion" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdTipoRol" Type="int" Nullable="false" />
+          <Property Name="EstadoCuenta" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InformacionBasicaContacto">
+          <Key>
+            <PropertyRef Name="IdContacto" />
+          </Key>
+          <Property Name="IdContacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdInformacionBasica" Type="int" Nullable="false" />
+          <Property Name="IdTipoContacto" Type="int" Nullable="false" />
+          <Property Name="Contacto" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Promocion">
+          <Key>
+            <PropertyRef Name="IdPromocion" />
+          </Key>
+          <Property Name="IdPromocion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombrePromocion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DescripcionPromocion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" />
+          <Property Name="FechaFin" Type="datetime" />
+          <Property Name="EstadoPromocion" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SedeXTEC">
+          <Key>
+            <PropertyRef Name="IdSedeXTEC" />
+          </Key>
+          <Property Name="IdSedeXTEC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreSedeXTEC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UbicacionSede" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoBeneficio">
+          <Key>
+            <PropertyRef Name="IdTipoBeneficio" />
+          </Key>
+          <Property Name="IdTipoBeneficio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreBeneficio" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DescripcionBeneficio" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CantidadBaseTecolones" Type="float" Nullable="false" />
+          <Property Name="EstadoBeneficio" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoContacto">
+          <Key>
+            <PropertyRef Name="IdTipoContacto" />
+          </Key>
+          <Property Name="IdTipoContacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreTipoContacto" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoMaterial">
+          <Key>
+            <PropertyRef Name="IdTipoMaterial" />
+          </Key>
+          <Property Name="IdTipoMaterial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreTipoMaterial" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CaracteristicaMaterial" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="PesoBaseMaterial" Type="float" Nullable="false" />
+          <Property Name="EquivalenciaTecolones" Type="float" Nullable="false" />
+          <Property Name="EstadoMaterial" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoRol">
+          <Key>
+            <PropertyRef Name="IdTipoRol" />
+          </Key>
+          <Property Name="IdTipoRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreRol" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CambioBeneficioEstudiante_Estudiante">
+          <End Role="TipoBeneficio" Type="Self.TipoBeneficio" Multiplicity="1" />
+          <End Role="CambioBeneficioEstudiante" Type="Self.CambioBeneficioEstudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoBeneficio">
+              <PropertyRef Name="IdTipoBeneficio" />
+            </Principal>
+            <Dependent Role="CambioBeneficioEstudiante">
+              <PropertyRef Name="IdTipoBeneficio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CambioBeneficioEstudiante_Estudiante1">
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+          <End Role="CambioBeneficioEstudiante" Type="Self.CambioBeneficioEstudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiante">
+              <PropertyRef Name="IdEstudiante" />
+            </Principal>
+            <Dependent Role="CambioBeneficioEstudiante">
+              <PropertyRef Name="IdEstudiante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CambioMaterialEstudiante_EncargadoCentroAcopio">
+          <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="1" />
+          <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EncargadoCentroAcopio">
+              <PropertyRef Name="IdEncargadoCentroAcopio" />
+            </Principal>
+            <Dependent Role="CambioMaterialEstudiante">
+              <PropertyRef Name="IdEncargadoCentroAcopio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CambioMaterialEstudiante_Estudiante">
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+          <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiante">
+              <PropertyRef Name="IdEstudiante" />
+            </Principal>
+            <Dependent Role="CambioMaterialEstudiante">
+              <PropertyRef Name="IdEstudiante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CambioMaterialEstudiante_Promocion">
+          <End Role="Promocion" Type="Self.Promocion" Multiplicity="0..1" />
+          <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Promocion">
+              <PropertyRef Name="IdPromocion" />
+            </Principal>
+            <Dependent Role="CambioMaterialEstudiante">
+              <PropertyRef Name="IdPromocion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CambioMaterialEstudiante_TipoMaterial">
+          <End Role="TipoMaterial" Type="Self.TipoMaterial" Multiplicity="1" />
+          <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMaterial">
+              <PropertyRef Name="IdTipoMaterial" />
+            </Principal>
+            <Dependent Role="CambioMaterialEstudiante">
+              <PropertyRef Name="IdTipoMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CentroAcopio_SedeXTEC">
+          <End Role="SedeXTEC" Type="Self.SedeXTEC" Multiplicity="1" />
+          <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SedeXTEC">
+              <PropertyRef Name="IdSedeXTEC" />
+            </Principal>
+            <Dependent Role="CentroAcopio">
+              <PropertyRef Name="IdSedeXTEC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatoAdminastrador_Departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="IdDepartamento" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="IdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatoAdminastrador_InformacionBasica">
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InformacionBasica">
+              <PropertyRef Name="IdInformacionBasica" />
+            </Principal>
+            <Dependent Role="Administrador">
+              <PropertyRef Name="IdInformacionBasica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EncargadoCentroAcopio_CentroAcopio">
+          <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="1" />
+          <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CentroAcopio">
+              <PropertyRef Name="IdCentroAcopio" />
+            </Principal>
+            <Dependent Role="EncargadoCentroAcopio">
+              <PropertyRef Name="IdCentroAcopio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EncargadoCentroAcopio_InformacionBasica">
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+          <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InformacionBasica">
+              <PropertyRef Name="IdInformacionBasica" />
+            </Principal>
+            <Dependent Role="EncargadoCentroAcopio">
+              <PropertyRef Name="IdInformacionBasica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estudiante_InformacionBasica">
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InformacionBasica">
+              <PropertyRef Name="IdInformacionBasica" />
+            </Principal>
+            <Dependent Role="Estudiante">
+              <PropertyRef Name="IdInformacionBasica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estudiante_SedeXTEC">
+          <End Role="SedeXTEC" Type="Self.SedeXTEC" Multiplicity="1" />
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SedeXTEC">
+              <PropertyRef Name="IdSedeXTEC" />
+            </Principal>
+            <Dependent Role="Estudiante">
+              <PropertyRef Name="IdSedeXTEC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformacionBasica_TipoRol">
+          <End Role="TipoRol" Type="Self.TipoRol" Multiplicity="1" />
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoRol">
+              <PropertyRef Name="IdTipoRol" />
+            </Principal>
+            <Dependent Role="InformacionBasica">
+              <PropertyRef Name="IdTipoRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformacionBasicaContacto_InformacionBasica">
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+          <End Role="InformacionBasicaContacto" Type="Self.InformacionBasicaContacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InformacionBasica">
+              <PropertyRef Name="IdInformacionBasica" />
+            </Principal>
+            <Dependent Role="InformacionBasicaContacto">
+              <PropertyRef Name="IdInformacionBasica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformacionBasicaContacto_TipoContacto">
+          <End Role="TipoContacto" Type="Self.TipoContacto" Multiplicity="1" />
+          <End Role="InformacionBasicaContacto" Type="Self.InformacionBasicaContacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoContacto">
+              <PropertyRef Name="IdTipoContacto" />
+            </Principal>
+            <Dependent Role="InformacionBasicaContacto">
+              <PropertyRef Name="IdTipoContacto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ActualizarTipo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdTipo" Type="varchar" Mode="In" />
+          <Parameter Name="NombreTabla" Type="varchar" Mode="In" />
+          <Parameter Name="NombreColumna" Type="varchar" Mode="In" />
+          <Parameter Name="DatoNuevo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CambioBeneficio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdentificacionEstudiante" Type="varchar" Mode="In" />
+          <Parameter Name="TipoBeneficio" Type="varchar" Mode="In" />
+          <Parameter Name="TecolonesCambio" Type="float" Mode="In" />
+          <Parameter Name="ColonesAdquiridos" Type="float" Mode="In" />
+          <Parameter Name="FechaCambio" Type="date" Mode="In" />
+        </Function>
+        <Function Name="CambioMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdentificacionEstudiante" Type="varchar" Mode="In" />
+          <Parameter Name="DIdentificadorCentroAcopio" Type="varchar" Mode="In" />
+          <Parameter Name="IdentificacionEncargado" Type="varchar" Mode="In" />
+          <Parameter Name="TipoMaterial" Type="varchar" Mode="In" />
+          <Parameter Name="FechaCambio" Type="date" Mode="In" />
+          <Parameter Name="PesoCambio" Type="float" Mode="In" />
+          <Parameter Name="TecolonesAdquiridos" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ColumnaSimple" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="FilaApilada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="InsertarAdministrador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="Contraseña" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="NombreRol" Type="varchar" Mode="In" />
+          <Parameter Name="NombreDepartamento" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarAdministradorAcopio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="Contraseña" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="NombreRol" Type="varchar" Mode="In" />
+          <Parameter Name="IdentificadorCentroAcopio" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarCentroAcopio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreSede" Type="varchar" Mode="In" />
+          <Parameter Name="Ubicacion" Type="varchar" Mode="In" />
+          <Parameter Name="Identificador" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarContacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Contacto" Type="varchar" Mode="In" />
+          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+          <Parameter Name="TipoContacto" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreDepartamento" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarEstudiante" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="Contraseña" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="NombreRol" Type="varchar" Mode="In" />
+          <Parameter Name="FechaIncorporacion" Type="date" Mode="In" />
+          <Parameter Name="Pasatiempo" Type="text" Mode="In" />
+          <Parameter Name="NombreSedeXTEC" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarInformacionBasica" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="Identificacion" Type="varchar" Mode="In" />
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="Contraseña" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="NombreRol" Type="varchar" Mode="In" />
+          <Parameter Name="IdInformacionBasica" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="InsertarSedeXTEC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreSedeXTEC" Type="varchar" Mode="In" />
+          <Parameter Name="UbicacionSede" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarTipoContacto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreTipoContacto" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertarTipoRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreRol" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="NuevaPromocion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombrePromocion" Type="varchar" Mode="In" />
+          <Parameter Name="DescripcionPromocion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaInicio" Type="date" Mode="In" />
+          <Parameter Name="FechaFin" Type="date" Mode="In" />
+        </Function>
+        <Function Name="NuevoTipoBeneficio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreBeneficio" Type="varchar" Mode="In" />
+          <Parameter Name="DescripcionBeneficio" Type="varchar" Mode="In" />
+          <Parameter Name="CantidadBaseTEColones" Type="float" Mode="In" />
+        </Function>
+        <Function Name="NuevoTipoMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreTipoMaterial" Type="varchar" Mode="In" />
+          <Parameter Name="CaracteristicaMaterial" Type="varchar" Mode="In" />
+          <Parameter Name="PesoBaseMaterial" Type="float" Mode="In" />
+          <Parameter Name="EquivalenciaTEColones" Type="float" Mode="In" />
+        </Function>
+        <Function Name="Tacometro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TEColonesEntregados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ToneladasSede" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TOP10" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="TEColonesModelStoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BitacoraBeneficio" EntityType="Self.BitacoraBeneficio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BitacoraMaterial" EntityType="Self.BitacoraMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BitacoraPromocion" EntityType="Self.BitacoraPromocion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CambioBeneficioEstudiante" EntityType="Self.CambioBeneficioEstudiante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CambioMaterialEstudiante" EntityType="Self.CambioMaterialEstudiante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CentroAcopio" EntityType="Self.CentroAcopio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EncargadoCentroAcopio" EntityType="Self.EncargadoCentroAcopio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estudiante" EntityType="Self.Estudiante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InformacionBasica" EntityType="Self.InformacionBasica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InformacionBasicaContacto" EntityType="Self.InformacionBasicaContacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Promocion" EntityType="Self.Promocion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SedeXTEC" EntityType="Self.SedeXTEC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoBeneficio" EntityType="Self.TipoBeneficio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoContacto" EntityType="Self.TipoContacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoMaterial" EntityType="Self.TipoMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoRol" EntityType="Self.TipoRol" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CambioBeneficioEstudiante_Estudiante" Association="Self.FK_CambioBeneficioEstudiante_Estudiante">
+            <End Role="TipoBeneficio" EntitySet="TipoBeneficio" />
+            <End Role="CambioBeneficioEstudiante" EntitySet="CambioBeneficioEstudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioBeneficioEstudiante_Estudiante1" Association="Self.FK_CambioBeneficioEstudiante_Estudiante1">
+            <End Role="Estudiante" EntitySet="Estudiante" />
+            <End Role="CambioBeneficioEstudiante" EntitySet="CambioBeneficioEstudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioMaterialEstudiante_EncargadoCentroAcopio" Association="Self.FK_CambioMaterialEstudiante_EncargadoCentroAcopio">
+            <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopio" />
+            <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioMaterialEstudiante_Estudiante" Association="Self.FK_CambioMaterialEstudiante_Estudiante">
+            <End Role="Estudiante" EntitySet="Estudiante" />
+            <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioMaterialEstudiante_Promocion" Association="Self.FK_CambioMaterialEstudiante_Promocion">
+            <End Role="Promocion" EntitySet="Promocion" />
+            <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioMaterialEstudiante_TipoMaterial" Association="Self.FK_CambioMaterialEstudiante_TipoMaterial">
+            <End Role="TipoMaterial" EntitySet="TipoMaterial" />
+            <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CentroAcopio_SedeXTEC" Association="Self.FK_CentroAcopio_SedeXTEC">
+            <End Role="SedeXTEC" EntitySet="SedeXTEC" />
+            <End Role="CentroAcopio" EntitySet="CentroAcopio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatoAdminastrador_Departamento" Association="Self.FK_DatoAdminastrador_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatoAdminastrador_InformacionBasica" Association="Self.FK_DatoAdminastrador_InformacionBasica">
+            <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+            <End Role="Administrador" EntitySet="Administrador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EncargadoCentroAcopio_CentroAcopio" Association="Self.FK_EncargadoCentroAcopio_CentroAcopio">
+            <End Role="CentroAcopio" EntitySet="CentroAcopio" />
+            <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EncargadoCentroAcopio_InformacionBasica" Association="Self.FK_EncargadoCentroAcopio_InformacionBasica">
+            <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+            <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estudiante_InformacionBasica" Association="Self.FK_Estudiante_InformacionBasica">
+            <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+            <End Role="Estudiante" EntitySet="Estudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estudiante_SedeXTEC" Association="Self.FK_Estudiante_SedeXTEC">
+            <End Role="SedeXTEC" EntitySet="SedeXTEC" />
+            <End Role="Estudiante" EntitySet="Estudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacionBasica_TipoRol" Association="Self.FK_InformacionBasica_TipoRol">
+            <End Role="TipoRol" EntitySet="TipoRol" />
+            <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacionBasicaContacto_InformacionBasica" Association="Self.FK_InformacionBasicaContacto_InformacionBasica">
+            <End Role="InformacionBasica" EntitySet="InformacionBasica" />
+            <End Role="InformacionBasicaContacto" EntitySet="InformacionBasicaContacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacionBasicaContacto_TipoContacto" Association="Self.FK_InformacionBasicaContacto_TipoContacto">
+            <End Role="TipoContacto" EntitySet="TipoContacto" />
+            <End Role="InformacionBasicaContacto" EntitySet="InformacionBasicaContacto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TEColonesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="IdAdmi" />
+          </Key>
+          <Property Name="IdAdmi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Departamento" Relationship="Self.FK_DatoAdminastrador_Departamento" FromRole="Administrador" ToRole="Departamento" />
+          <NavigationProperty Name="InformacionBasica" Relationship="Self.FK_DatoAdminastrador_InformacionBasica" FromRole="Administrador" ToRole="InformacionBasica" />
+        </EntityType>
+        <EntityType Name="BitacoraBeneficio">
+          <Key>
+            <PropertyRef Name="IdBitacoraBeneficio" />
+          </Key>
+          <Property Name="IdBitacoraBeneficio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Operacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BeneficioModificado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DatoViejo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColumnaModificada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tabla" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BitacoraMaterial">
+          <Key>
+            <PropertyRef Name="IdBitacoraMaterial" />
+          </Key>
+          <Property Name="IdBitacoraMaterial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Operacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaterialModificado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DatoViejo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColumnaModificada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tabla" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BitacoraPromocion">
+          <Key>
+            <PropertyRef Name="IdBitacoraPromocion" />
+          </Key>
+          <Property Name="IdBitacoraPromocion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Operacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PromocionModificada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DatoViejo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColumnaModificada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaModificacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tabla" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CambioBeneficioEstudiante">
+          <Key>
+            <PropertyRef Name="IdCambioBeneficioEstudiante" />
+          </Key>
+          <Property Name="IdCambioBeneficioEstudiante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TecolonesCambio" Type="Double" Nullable="false" />
+          <Property Name="ColonesAdquiridos" Type="Double" Nullable="false" />
+          <Property Name="FechaCambio" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="TipoBeneficio" Relationship="Self.FK_CambioBeneficioEstudiante_Estudiante" FromRole="CambioBeneficioEstudiante" ToRole="TipoBeneficio" />
+          <NavigationProperty Name="Estudiante" Relationship="Self.FK_CambioBeneficioEstudiante_Estudiante1" FromRole="CambioBeneficioEstudiante" ToRole="Estudiante" />
+        </EntityType>
+        <EntityType Name="CambioMaterialEstudiante">
+          <Key>
+            <PropertyRef Name="IdCambioMaterialEstudiante" />
+          </Key>
+          <Property Name="IdCambioMaterialEstudiante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaCambio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PesoReciclaje" Type="Double" Nullable="false" />
+          <Property Name="TecolonesAdquiridos" Type="Double" Nullable="false" />
+          <NavigationProperty Name="EncargadoCentroAcopio" Relationship="Self.FK_CambioMaterialEstudiante_EncargadoCentroAcopio" FromRole="CambioMaterialEstudiante" ToRole="EncargadoCentroAcopio" />
+          <NavigationProperty Name="Estudiante" Relationship="Self.FK_CambioMaterialEstudiante_Estudiante" FromRole="CambioMaterialEstudiante" ToRole="Estudiante" />
+          <NavigationProperty Name="Promocion" Relationship="Self.FK_CambioMaterialEstudiante_Promocion" FromRole="CambioMaterialEstudiante" ToRole="Promocion" />
+          <NavigationProperty Name="TipoMaterial" Relationship="Self.FK_CambioMaterialEstudiante_TipoMaterial" FromRole="CambioMaterialEstudiante" ToRole="TipoMaterial" />
+        </EntityType>
+        <EntityType Name="CentroAcopio">
+          <Key>
+            <PropertyRef Name="IdCentroAcopio" />
+          </Key>
+          <Property Name="IdCentroAcopio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ubicacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Identificador" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SedeXTEC" Relationship="Self.FK_CentroAcopio_SedeXTEC" FromRole="CentroAcopio" ToRole="SedeXTEC" />
+          <NavigationProperty Name="EncargadoCentroAcopios" Relationship="Self.FK_EncargadoCentroAcopio_CentroAcopio" FromRole="CentroAcopio" ToRole="EncargadoCentroAcopio" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="IdDepartamento" />
+          </Key>
+          <Property Name="IdDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreDepartamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Administradors" Relationship="Self.FK_DatoAdminastrador_Departamento" FromRole="Departamento" ToRole="Administrador" />
+        </EntityType>
+        <EntityType Name="EncargadoCentroAcopio">
+          <Key>
+            <PropertyRef Name="IdEncargadoCentroAcopio" />
+          </Key>
+          <Property Name="IdEncargadoCentroAcopio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="CambioMaterialEstudiantes" Relationship="Self.FK_CambioMaterialEstudiante_EncargadoCentroAcopio" FromRole="EncargadoCentroAcopio" ToRole="CambioMaterialEstudiante" />
+          <NavigationProperty Name="CentroAcopio" Relationship="Self.FK_EncargadoCentroAcopio_CentroAcopio" FromRole="EncargadoCentroAcopio" ToRole="CentroAcopio" />
+          <NavigationProperty Name="InformacionBasica" Relationship="Self.FK_EncargadoCentroAcopio_InformacionBasica" FromRole="EncargadoCentroAcopio" ToRole="InformacionBasica" />
+        </EntityType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="IdEstudiante" />
+          </Key>
+          <Property Name="IdEstudiante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaIncorporacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Pasatiempo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SobreMi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FotoPerfil" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="CambioBeneficioEstudiantes" Relationship="Self.FK_CambioBeneficioEstudiante_Estudiante1" FromRole="Estudiante" ToRole="CambioBeneficioEstudiante" />
+          <NavigationProperty Name="CambioMaterialEstudiantes" Relationship="Self.FK_CambioMaterialEstudiante_Estudiante" FromRole="Estudiante" ToRole="CambioMaterialEstudiante" />
+          <NavigationProperty Name="InformacionBasica" Relationship="Self.FK_Estudiante_InformacionBasica" FromRole="Estudiante" ToRole="InformacionBasica" />
+          <NavigationProperty Name="SedeXTEC" Relationship="Self.FK_Estudiante_SedeXTEC" FromRole="Estudiante" ToRole="SedeXTEC" />
+        </EntityType>
+        <EntityType Name="InformacionBasica">
+          <Key>
+            <PropertyRef Name="IdInformacionBasica" />
+          </Key>
+          <Property Name="IdInformacionBasica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimerApellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SegundoApellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Identificacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstadoCuenta" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Administradors" Relationship="Self.FK_DatoAdminastrador_InformacionBasica" FromRole="InformacionBasica" ToRole="Administrador" />
+          <NavigationProperty Name="EncargadoCentroAcopios" Relationship="Self.FK_EncargadoCentroAcopio_InformacionBasica" FromRole="InformacionBasica" ToRole="EncargadoCentroAcopio" />
+          <NavigationProperty Name="Estudiantes" Relationship="Self.FK_Estudiante_InformacionBasica" FromRole="InformacionBasica" ToRole="Estudiante" />
+          <NavigationProperty Name="TipoRol" Relationship="Self.FK_InformacionBasica_TipoRol" FromRole="InformacionBasica" ToRole="TipoRol" />
+          <NavigationProperty Name="InformacionBasicaContactoes" Relationship="Self.FK_InformacionBasicaContacto_InformacionBasica" FromRole="InformacionBasica" ToRole="InformacionBasicaContacto" />
+        </EntityType>
+        <EntityType Name="InformacionBasicaContacto">
+          <Key>
+            <PropertyRef Name="IdContacto" />
+          </Key>
+          <Property Name="IdContacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="InformacionBasica" Relationship="Self.FK_InformacionBasicaContacto_InformacionBasica" FromRole="InformacionBasicaContacto" ToRole="InformacionBasica" />
+          <NavigationProperty Name="TipoContacto" Relationship="Self.FK_InformacionBasicaContacto_TipoContacto" FromRole="InformacionBasicaContacto" ToRole="TipoContacto" />
+        </EntityType>
+        <EntityType Name="Promocion">
+          <Key>
+            <PropertyRef Name="IdPromocion" />
+          </Key>
+          <Property Name="IdPromocion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombrePromocion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DescripcionPromocion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+          <Property Name="FechaFin" Type="DateTime" Precision="3" />
+          <Property Name="EstadoPromocion" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CambioMaterialEstudiantes" Relationship="Self.FK_CambioMaterialEstudiante_Promocion" FromRole="Promocion" ToRole="CambioMaterialEstudiante" />
+        </EntityType>
+        <EntityType Name="SedeXTEC">
+          <Key>
+            <PropertyRef Name="IdSedeXTEC" />
+          </Key>
+          <Property Name="IdSedeXTEC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreSedeXTEC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UbicacionSede" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CentroAcopios" Relationship="Self.FK_CentroAcopio_SedeXTEC" FromRole="SedeXTEC" ToRole="CentroAcopio" />
+          <NavigationProperty Name="Estudiantes" Relationship="Self.FK_Estudiante_SedeXTEC" FromRole="SedeXTEC" ToRole="Estudiante" />
+        </EntityType>
+        <EntityType Name="TipoBeneficio">
+          <Key>
+            <PropertyRef Name="IdTipoBeneficio" />
+          </Key>
+          <Property Name="IdTipoBeneficio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreBeneficio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DescripcionBeneficio" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CantidadBaseTecolones" Type="Double" Nullable="false" />
+          <Property Name="EstadoBeneficio" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CambioBeneficioEstudiantes" Relationship="Self.FK_CambioBeneficioEstudiante_Estudiante" FromRole="TipoBeneficio" ToRole="CambioBeneficioEstudiante" />
+        </EntityType>
+        <EntityType Name="TipoContacto">
+          <Key>
+            <PropertyRef Name="IdTipoContacto" />
+          </Key>
+          <Property Name="IdTipoContacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreTipoContacto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="InformacionBasicaContactoes" Relationship="Self.FK_InformacionBasicaContacto_TipoContacto" FromRole="TipoContacto" ToRole="InformacionBasicaContacto" />
+        </EntityType>
+        <EntityType Name="TipoMaterial">
+          <Key>
+            <PropertyRef Name="IdTipoMaterial" />
+          </Key>
+          <Property Name="IdTipoMaterial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreTipoMaterial" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CaracteristicaMaterial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PesoBaseMaterial" Type="Double" Nullable="false" />
+          <Property Name="EquivalenciaTecolones" Type="Double" Nullable="false" />
+          <Property Name="EstadoMaterial" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CambioMaterialEstudiantes" Relationship="Self.FK_CambioMaterialEstudiante_TipoMaterial" FromRole="TipoMaterial" ToRole="CambioMaterialEstudiante" />
+        </EntityType>
+        <EntityType Name="TipoRol">
+          <Key>
+            <PropertyRef Name="IdTipoRol" />
+          </Key>
+          <Property Name="IdTipoRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreRol" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="InformacionBasicas" Relationship="Self.FK_InformacionBasica_TipoRol" FromRole="TipoRol" ToRole="InformacionBasica" />
+        </EntityType>
+        <Association Name="FK_DatoAdminastrador_Departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DatoAdminastrador_InformacionBasica">
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+          <End Role="Administrador" Type="Self.Administrador" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CambioBeneficioEstudiante_Estudiante">
+          <End Role="TipoBeneficio" Type="Self.TipoBeneficio" Multiplicity="1" />
+          <End Role="CambioBeneficioEstudiante" Type="Self.CambioBeneficioEstudiante" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CambioBeneficioEstudiante_Estudiante1">
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+          <End Role="CambioBeneficioEstudiante" Type="Self.CambioBeneficioEstudiante" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CambioMaterialEstudiante_EncargadoCentroAcopio">
+          <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="1" />
+          <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CambioMaterialEstudiante_Estudiante">
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+          <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CambioMaterialEstudiante_Promocion">
+          <End Role="Promocion" Type="Self.Promocion" Multiplicity="0..1" />
+          <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CambioMaterialEstudiante_TipoMaterial">
+          <End Role="TipoMaterial" Type="Self.TipoMaterial" Multiplicity="1" />
+          <End Role="CambioMaterialEstudiante" Type="Self.CambioMaterialEstudiante" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CentroAcopio_SedeXTEC">
+          <End Role="SedeXTEC" Type="Self.SedeXTEC" Multiplicity="1" />
+          <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_EncargadoCentroAcopio_CentroAcopio">
+          <End Role="CentroAcopio" Type="Self.CentroAcopio" Multiplicity="1" />
+          <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_EncargadoCentroAcopio_InformacionBasica">
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+          <End Role="EncargadoCentroAcopio" Type="Self.EncargadoCentroAcopio" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Estudiante_InformacionBasica">
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Estudiante_SedeXTEC">
+          <End Role="SedeXTEC" Type="Self.SedeXTEC" Multiplicity="1" />
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_InformacionBasica_TipoRol">
+          <End Role="TipoRol" Type="Self.TipoRol" Multiplicity="1" />
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_InformacionBasicaContacto_InformacionBasica">
+          <End Role="InformacionBasica" Type="Self.InformacionBasica" Multiplicity="1" />
+          <End Role="InformacionBasicaContacto" Type="Self.InformacionBasicaContacto" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_InformacionBasicaContacto_TipoContacto">
+          <End Role="TipoContacto" Type="Self.TipoContacto" Multiplicity="1" />
+          <End Role="InformacionBasicaContacto" Type="Self.InformacionBasicaContacto" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="TEColonesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administradors" EntityType="Self.Administrador" />
+          <EntitySet Name="BitacoraBeneficios" EntityType="Self.BitacoraBeneficio" />
+          <EntitySet Name="BitacoraMaterials" EntityType="Self.BitacoraMaterial" />
+          <EntitySet Name="BitacoraPromocions" EntityType="Self.BitacoraPromocion" />
+          <EntitySet Name="CambioBeneficioEstudiantes" EntityType="Self.CambioBeneficioEstudiante" />
+          <EntitySet Name="CambioMaterialEstudiantes" EntityType="Self.CambioMaterialEstudiante" />
+          <EntitySet Name="CentroAcopios" EntityType="Self.CentroAcopio" />
+          <EntitySet Name="Departamentoes" EntityType="Self.Departamento" />
+          <EntitySet Name="EncargadoCentroAcopios" EntityType="Self.EncargadoCentroAcopio" />
+          <EntitySet Name="Estudiantes" EntityType="Self.Estudiante" />
+          <EntitySet Name="InformacionBasicas" EntityType="Self.InformacionBasica" />
+          <EntitySet Name="InformacionBasicaContactoes" EntityType="Self.InformacionBasicaContacto" />
+          <EntitySet Name="Promocions" EntityType="Self.Promocion" />
+          <EntitySet Name="SedeXTECs" EntityType="Self.SedeXTEC" />
+          <EntitySet Name="TipoBeneficios" EntityType="Self.TipoBeneficio" />
+          <EntitySet Name="TipoContactoes" EntityType="Self.TipoContacto" />
+          <EntitySet Name="TipoMaterials" EntityType="Self.TipoMaterial" />
+          <EntitySet Name="TipoRols" EntityType="Self.TipoRol" />
+          <AssociationSet Name="FK_DatoAdminastrador_Departamento" Association="Self.FK_DatoAdminastrador_Departamento">
+            <End Role="Departamento" EntitySet="Departamentoes" />
+            <End Role="Administrador" EntitySet="Administradors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatoAdminastrador_InformacionBasica" Association="Self.FK_DatoAdminastrador_InformacionBasica">
+            <End Role="InformacionBasica" EntitySet="InformacionBasicas" />
+            <End Role="Administrador" EntitySet="Administradors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioBeneficioEstudiante_Estudiante" Association="Self.FK_CambioBeneficioEstudiante_Estudiante">
+            <End Role="TipoBeneficio" EntitySet="TipoBeneficios" />
+            <End Role="CambioBeneficioEstudiante" EntitySet="CambioBeneficioEstudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioBeneficioEstudiante_Estudiante1" Association="Self.FK_CambioBeneficioEstudiante_Estudiante1">
+            <End Role="Estudiante" EntitySet="Estudiantes" />
+            <End Role="CambioBeneficioEstudiante" EntitySet="CambioBeneficioEstudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioMaterialEstudiante_EncargadoCentroAcopio" Association="Self.FK_CambioMaterialEstudiante_EncargadoCentroAcopio">
+            <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopios" />
+            <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioMaterialEstudiante_Estudiante" Association="Self.FK_CambioMaterialEstudiante_Estudiante">
+            <End Role="Estudiante" EntitySet="Estudiantes" />
+            <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioMaterialEstudiante_Promocion" Association="Self.FK_CambioMaterialEstudiante_Promocion">
+            <End Role="Promocion" EntitySet="Promocions" />
+            <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CambioMaterialEstudiante_TipoMaterial" Association="Self.FK_CambioMaterialEstudiante_TipoMaterial">
+            <End Role="TipoMaterial" EntitySet="TipoMaterials" />
+            <End Role="CambioMaterialEstudiante" EntitySet="CambioMaterialEstudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CentroAcopio_SedeXTEC" Association="Self.FK_CentroAcopio_SedeXTEC">
+            <End Role="SedeXTEC" EntitySet="SedeXTECs" />
+            <End Role="CentroAcopio" EntitySet="CentroAcopios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EncargadoCentroAcopio_CentroAcopio" Association="Self.FK_EncargadoCentroAcopio_CentroAcopio">
+            <End Role="CentroAcopio" EntitySet="CentroAcopios" />
+            <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EncargadoCentroAcopio_InformacionBasica" Association="Self.FK_EncargadoCentroAcopio_InformacionBasica">
+            <End Role="InformacionBasica" EntitySet="InformacionBasicas" />
+            <End Role="EncargadoCentroAcopio" EntitySet="EncargadoCentroAcopios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estudiante_InformacionBasica" Association="Self.FK_Estudiante_InformacionBasica">
+            <End Role="InformacionBasica" EntitySet="InformacionBasicas" />
+            <End Role="Estudiante" EntitySet="Estudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estudiante_SedeXTEC" Association="Self.FK_Estudiante_SedeXTEC">
+            <End Role="SedeXTEC" EntitySet="SedeXTECs" />
+            <End Role="Estudiante" EntitySet="Estudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacionBasica_TipoRol" Association="Self.FK_InformacionBasica_TipoRol">
+            <End Role="TipoRol" EntitySet="TipoRols" />
+            <End Role="InformacionBasica" EntitySet="InformacionBasicas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacionBasicaContacto_InformacionBasica" Association="Self.FK_InformacionBasicaContacto_InformacionBasica">
+            <End Role="InformacionBasica" EntitySet="InformacionBasicas" />
+            <End Role="InformacionBasicaContacto" EntitySet="InformacionBasicaContactoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacionBasicaContacto_TipoContacto" Association="Self.FK_InformacionBasicaContacto_TipoContacto">
+            <End Role="TipoContacto" EntitySet="TipoContactoes" />
+            <End Role="InformacionBasicaContacto" EntitySet="InformacionBasicaContactoes" />
+          </AssociationSet>
+          <FunctionImport Name="ActualizarTipo" ReturnType="Collection(TEColonesModel.ActualizarTipo_Result)">
+            <Parameter Name="IdTipo" Mode="In" Type="String" />
+            <Parameter Name="NombreTabla" Mode="In" Type="String" />
+            <Parameter Name="NombreColumna" Mode="In" Type="String" />
+            <Parameter Name="DatoNuevo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CambioBeneficio" ReturnType="Collection(TEColonesModel.CambioBeneficio_Result)">
+            <Parameter Name="IdentificacionEstudiante" Mode="In" Type="String" />
+            <Parameter Name="TipoBeneficio" Mode="In" Type="String" />
+            <Parameter Name="TecolonesCambio" Mode="In" Type="Double" />
+            <Parameter Name="ColonesAdquiridos" Mode="In" Type="Double" />
+            <Parameter Name="FechaCambio" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CambioMaterial" ReturnType="Collection(TEColonesModel.CambioMaterial_Result)">
+            <Parameter Name="IdentificacionEstudiante" Mode="In" Type="String" />
+            <Parameter Name="DIdentificadorCentroAcopio" Mode="In" Type="String" />
+            <Parameter Name="IdentificacionEncargado" Mode="In" Type="String" />
+            <Parameter Name="TipoMaterial" Mode="In" Type="String" />
+            <Parameter Name="FechaCambio" Mode="In" Type="DateTime" />
+            <Parameter Name="PesoCambio" Mode="In" Type="Double" />
+            <Parameter Name="TecolonesAdquiridos" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarAdministrador" ReturnType="Collection(TEColonesModel.InsertarAdministrador_Result)">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Contraseña" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="NombreRol" Mode="In" Type="String" />
+            <Parameter Name="NombreDepartamento" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarAdministradorAcopio" ReturnType="Collection(TEColonesModel.InsertarAdministradorAcopio_Result)">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Contraseña" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="NombreRol" Mode="In" Type="String" />
+            <Parameter Name="IdentificadorCentroAcopio" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarCentroAcopio" ReturnType="Collection(TEColonesModel.InsertarCentroAcopio_Result)">
+            <Parameter Name="NombreSede" Mode="In" Type="String" />
+            <Parameter Name="Ubicacion" Mode="In" Type="String" />
+            <Parameter Name="Identificador" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarContacto" ReturnType="Collection(TEColonesModel.InsertarContacto_Result)">
+            <Parameter Name="Contacto" Mode="In" Type="String" />
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="TipoContacto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarDepartamento" ReturnType="Collection(TEColonesModel.InsertarDepartamento_Result)">
+          <Parameter Name="NombreDepartamento" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarEstudiante" ReturnType="Collection(TEColonesModel.InsertarEstudiante_Result)">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Contraseña" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="NombreRol" Mode="In" Type="String" />
+            <Parameter Name="FechaIncorporacion" Mode="In" Type="DateTime" />
+            <Parameter Name="Pasatiempo" Mode="In" Type="String" />
+            <Parameter Name="NombreSedeXTEC" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarInformacionBasica" ReturnType="Collection(TEColonesModel.InsertarInformacionBasica_Result)">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Contraseña" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="NombreRol" Mode="In" Type="String" />
+            <Parameter Name="IdInformacionBasica" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarSedeXTEC" ReturnType="Collection(TEColonesModel.InsertarSedeXTEC_Result)">
+            <Parameter Name="NombreSedeXTEC" Mode="In" Type="String" />
+            <Parameter Name="UbicacionSede" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarTipoContacto" ReturnType="Collection(TEColonesModel.InsertarTipoContacto_Result)">
+          <Parameter Name="NombreTipoContacto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertarTipoRol" ReturnType="Collection(TEColonesModel.InsertarTipoRol_Result)">
+          <Parameter Name="NombreRol" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="NuevaPromocion" ReturnType="Collection(TEColonesModel.NuevaPromocion_Result)">
+            <Parameter Name="NombrePromocion" Mode="In" Type="String" />
+            <Parameter Name="DescripcionPromocion" Mode="In" Type="String" />
+            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="NuevoTipoBeneficio" ReturnType="Collection(TEColonesModel.NuevoTipoBeneficio_Result)">
+            <Parameter Name="NombreBeneficio" Mode="In" Type="String" />
+            <Parameter Name="DescripcionBeneficio" Mode="In" Type="String" />
+            <Parameter Name="CantidadBaseTEColones" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="NuevoTipoMaterial" ReturnType="Collection(TEColonesModel.NuevoTipoMaterial_Result)">
+            <Parameter Name="NombreTipoMaterial" Mode="In" Type="String" />
+            <Parameter Name="CaracteristicaMaterial" Mode="In" Type="String" />
+            <Parameter Name="PesoBaseMaterial" Mode="In" Type="Double" />
+            <Parameter Name="EquivalenciaTEColones" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="Tacometro" ReturnType="Collection(Double)" />
+          <FunctionImport Name="ColumnaSimple" ReturnType="Collection(TEColonesModel.ColumnaSimple_Result)" />
+          <FunctionImport Name="FilaApilada" ReturnType="Collection(TEColonesModel.FilaApilada_Result)" />
+          <FunctionImport Name="TOP10" ReturnType="Collection(TEColonesModel.TOP10_Result)" />
+          <FunctionImport Name="TEColonesEntregados" ReturnType="Collection(TEColonesModel.TEColonesEntregados_Result)" />
+          <FunctionImport Name="ToneladasSede" ReturnType="Collection(TEColonesModel.ToneladasSede_Result)" />
+        </EntityContainer>
+        <ComplexType Name="ActualizarTipo_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="CambioBeneficio_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="CambioMaterial_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarAdministrador_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarAdministradorAcopio_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarCentroAcopio_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarContacto_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarDepartamento_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarEstudiante_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarInformacionBasica_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarSedeXTEC_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarTipoContacto_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="InsertarTipoRol_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="NuevaPromocion_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="NuevoTipoBeneficio_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="NuevoTipoMaterial_Result">
+          <Property Type="String" Name="ErrorProcedimiento" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="TipoError" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="ColumnaSimple_Result">
+          <Property Type="Int32" Name="Mes" Nullable="true" />
+          <Property Type="Double" Name="PesoTotal" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="FilaApilada_Result">
+          <Property Type="String" Name="NombreBeneficio" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="Mes" Nullable="true" />
+          <Property Type="Double" Name="Total" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TOP10_Result">
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="102" />
+          <Property Type="String" Name="Carnet" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NombreSedeXTEC" Nullable="false" MaxLength="50" />
+          <Property Type="Double" Name="Cantidad_Material" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TEColonesEntregados_Result">
+          <Property Type="Int32" Name="Mes" Nullable="true" />
+          <Property Type="Double" Name="Puntos" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ToneladasSede_Result">
+          <Property Type="String" Name="Sede" Nullable="false" MaxLength="50" />
+          <Property Type="Double" Name="PesoTotal" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TEColonesModelStoreContainer" CdmEntityContainer="TEColonesEntities">
+          <EntitySetMapping Name="Administradors">
+            <EntityTypeMapping TypeName="TEColonesModel.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="IdAdmi" ColumnName="IdAdmi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BitacoraBeneficios">
+            <EntityTypeMapping TypeName="TEColonesModel.BitacoraBeneficio">
+              <MappingFragment StoreEntitySet="BitacoraBeneficio">
+                <ScalarProperty Name="IdBitacoraBeneficio" ColumnName="IdBitacoraBeneficio" />
+                <ScalarProperty Name="Operacion" ColumnName="Operacion" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="BeneficioModificado" ColumnName="BeneficioModificado" />
+                <ScalarProperty Name="DatoViejo" ColumnName="DatoViejo" />
+                <ScalarProperty Name="ColumnaModificada" ColumnName="ColumnaModificada" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BitacoraMaterials">
+            <EntityTypeMapping TypeName="TEColonesModel.BitacoraMaterial">
+              <MappingFragment StoreEntitySet="BitacoraMaterial">
+                <ScalarProperty Name="IdBitacoraMaterial" ColumnName="IdBitacoraMaterial" />
+                <ScalarProperty Name="Operacion" ColumnName="Operacion" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="MaterialModificado" ColumnName="MaterialModificado" />
+                <ScalarProperty Name="DatoViejo" ColumnName="DatoViejo" />
+                <ScalarProperty Name="ColumnaModificada" ColumnName="ColumnaModificada" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BitacoraPromocions">
+            <EntityTypeMapping TypeName="TEColonesModel.BitacoraPromocion">
+              <MappingFragment StoreEntitySet="BitacoraPromocion">
+                <ScalarProperty Name="IdBitacoraPromocion" ColumnName="IdBitacoraPromocion" />
+                <ScalarProperty Name="Operacion" ColumnName="Operacion" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="PromocionModificada" ColumnName="PromocionModificada" />
+                <ScalarProperty Name="DatoViejo" ColumnName="DatoViejo" />
+                <ScalarProperty Name="ColumnaModificada" ColumnName="ColumnaModificada" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CambioBeneficioEstudiantes">
+            <EntityTypeMapping TypeName="TEColonesModel.CambioBeneficioEstudiante">
+              <MappingFragment StoreEntitySet="CambioBeneficioEstudiante">
+                <ScalarProperty Name="IdCambioBeneficioEstudiante" ColumnName="IdCambioBeneficioEstudiante" />
+                <ScalarProperty Name="TecolonesCambio" ColumnName="TecolonesCambio" />
+                <ScalarProperty Name="ColonesAdquiridos" ColumnName="ColonesAdquiridos" />
+                <ScalarProperty Name="FechaCambio" ColumnName="FechaCambio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CambioMaterialEstudiantes">
+            <EntityTypeMapping TypeName="TEColonesModel.CambioMaterialEstudiante">
+              <MappingFragment StoreEntitySet="CambioMaterialEstudiante">
+                <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+                <ScalarProperty Name="FechaCambio" ColumnName="FechaCambio" />
+                <ScalarProperty Name="PesoReciclaje" ColumnName="PesoReciclaje" />
+                <ScalarProperty Name="TecolonesAdquiridos" ColumnName="TecolonesAdquiridos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CentroAcopios">
+            <EntityTypeMapping TypeName="TEColonesModel.CentroAcopio">
+              <MappingFragment StoreEntitySet="CentroAcopio">
+                <ScalarProperty Name="IdCentroAcopio" ColumnName="IdCentroAcopio" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamentoes">
+            <EntityTypeMapping TypeName="TEColonesModel.Departamento">
+              <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+                <ScalarProperty Name="NombreDepartamento" ColumnName="NombreDepartamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EncargadoCentroAcopios">
+            <EntityTypeMapping TypeName="TEColonesModel.EncargadoCentroAcopio">
+              <MappingFragment StoreEntitySet="EncargadoCentroAcopio">
+                <ScalarProperty Name="IdEncargadoCentroAcopio" ColumnName="IdEncargadoCentroAcopio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estudiantes">
+            <EntityTypeMapping TypeName="TEColonesModel.Estudiante">
+              <MappingFragment StoreEntitySet="Estudiante">
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="FechaIncorporacion" ColumnName="FechaIncorporacion" />
+                <ScalarProperty Name="Pasatiempo" ColumnName="Pasatiempo" />
+                <ScalarProperty Name="SobreMi" ColumnName="SobreMi" />
+                <ScalarProperty Name="FotoPerfil" ColumnName="FotoPerfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InformacionBasicas">
+            <EntityTypeMapping TypeName="TEColonesModel.InformacionBasica">
+              <MappingFragment StoreEntitySet="InformacionBasica">
+                <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="EstadoCuenta" ColumnName="EstadoCuenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InformacionBasicaContactoes">
+            <EntityTypeMapping TypeName="TEColonesModel.InformacionBasicaContacto">
+              <MappingFragment StoreEntitySet="InformacionBasicaContacto">
+                <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Promocions">
+            <EntityTypeMapping TypeName="TEColonesModel.Promocion">
+              <MappingFragment StoreEntitySet="Promocion">
+                <ScalarProperty Name="IdPromocion" ColumnName="IdPromocion" />
+                <ScalarProperty Name="NombrePromocion" ColumnName="NombrePromocion" />
+                <ScalarProperty Name="DescripcionPromocion" ColumnName="DescripcionPromocion" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="EstadoPromocion" ColumnName="EstadoPromocion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SedeXTECs">
+            <EntityTypeMapping TypeName="TEColonesModel.SedeXTEC">
+              <MappingFragment StoreEntitySet="SedeXTEC">
+                <ScalarProperty Name="IdSedeXTEC" ColumnName="IdSedeXTEC" />
+                <ScalarProperty Name="NombreSedeXTEC" ColumnName="NombreSedeXTEC" />
+                <ScalarProperty Name="UbicacionSede" ColumnName="UbicacionSede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoBeneficios">
+            <EntityTypeMapping TypeName="TEColonesModel.TipoBeneficio">
+              <MappingFragment StoreEntitySet="TipoBeneficio">
+                <ScalarProperty Name="IdTipoBeneficio" ColumnName="IdTipoBeneficio" />
+                <ScalarProperty Name="NombreBeneficio" ColumnName="NombreBeneficio" />
+                <ScalarProperty Name="DescripcionBeneficio" ColumnName="DescripcionBeneficio" />
+                <ScalarProperty Name="CantidadBaseTecolones" ColumnName="CantidadBaseTecolones" />
+                <ScalarProperty Name="EstadoBeneficio" ColumnName="EstadoBeneficio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoContactoes">
+            <EntityTypeMapping TypeName="TEColonesModel.TipoContacto">
+              <MappingFragment StoreEntitySet="TipoContacto">
+                <ScalarProperty Name="IdTipoContacto" ColumnName="IdTipoContacto" />
+                <ScalarProperty Name="NombreTipoContacto" ColumnName="NombreTipoContacto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoMaterials">
+            <EntityTypeMapping TypeName="TEColonesModel.TipoMaterial">
+              <MappingFragment StoreEntitySet="TipoMaterial">
+                <ScalarProperty Name="IdTipoMaterial" ColumnName="IdTipoMaterial" />
+                <ScalarProperty Name="NombreTipoMaterial" ColumnName="NombreTipoMaterial" />
+                <ScalarProperty Name="CaracteristicaMaterial" ColumnName="CaracteristicaMaterial" />
+                <ScalarProperty Name="PesoBaseMaterial" ColumnName="PesoBaseMaterial" />
+                <ScalarProperty Name="EquivalenciaTecolones" ColumnName="EquivalenciaTecolones" />
+                <ScalarProperty Name="EstadoMaterial" ColumnName="EstadoMaterial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoRols">
+            <EntityTypeMapping TypeName="TEColonesModel.TipoRol">
+              <MappingFragment StoreEntitySet="TipoRol">
+                <ScalarProperty Name="IdTipoRol" ColumnName="IdTipoRol" />
+                <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_DatoAdminastrador_Departamento" TypeName="TEColonesModel.FK_DatoAdminastrador_Departamento" StoreEntitySet="Administrador">
+            <EndProperty Name="Departamento">
+              <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+            </EndProperty>
+            <EndProperty Name="Administrador">
+              <ScalarProperty Name="IdAdmi" ColumnName="IdAdmi" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DatoAdminastrador_InformacionBasica" TypeName="TEColonesModel.FK_DatoAdminastrador_InformacionBasica" StoreEntitySet="Administrador">
+            <EndProperty Name="InformacionBasica">
+              <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+            </EndProperty>
+            <EndProperty Name="Administrador">
+              <ScalarProperty Name="IdAdmi" ColumnName="IdAdmi" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CambioBeneficioEstudiante_Estudiante" TypeName="TEColonesModel.FK_CambioBeneficioEstudiante_Estudiante" StoreEntitySet="CambioBeneficioEstudiante">
+            <EndProperty Name="TipoBeneficio">
+              <ScalarProperty Name="IdTipoBeneficio" ColumnName="IdTipoBeneficio" />
+            </EndProperty>
+            <EndProperty Name="CambioBeneficioEstudiante">
+              <ScalarProperty Name="IdCambioBeneficioEstudiante" ColumnName="IdCambioBeneficioEstudiante" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CambioBeneficioEstudiante_Estudiante1" TypeName="TEColonesModel.FK_CambioBeneficioEstudiante_Estudiante1" StoreEntitySet="CambioBeneficioEstudiante">
+            <EndProperty Name="Estudiante">
+              <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+            </EndProperty>
+            <EndProperty Name="CambioBeneficioEstudiante">
+              <ScalarProperty Name="IdCambioBeneficioEstudiante" ColumnName="IdCambioBeneficioEstudiante" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CambioMaterialEstudiante_EncargadoCentroAcopio" TypeName="TEColonesModel.FK_CambioMaterialEstudiante_EncargadoCentroAcopio" StoreEntitySet="CambioMaterialEstudiante">
+            <EndProperty Name="EncargadoCentroAcopio">
+              <ScalarProperty Name="IdEncargadoCentroAcopio" ColumnName="IdEncargadoCentroAcopio" />
+            </EndProperty>
+            <EndProperty Name="CambioMaterialEstudiante">
+              <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CambioMaterialEstudiante_Estudiante" TypeName="TEColonesModel.FK_CambioMaterialEstudiante_Estudiante" StoreEntitySet="CambioMaterialEstudiante">
+            <EndProperty Name="Estudiante">
+              <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+            </EndProperty>
+            <EndProperty Name="CambioMaterialEstudiante">
+              <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CambioMaterialEstudiante_Promocion" TypeName="TEColonesModel.FK_CambioMaterialEstudiante_Promocion" StoreEntitySet="CambioMaterialEstudiante">
+            <EndProperty Name="Promocion">
+              <ScalarProperty Name="IdPromocion" ColumnName="IdPromocion" />
+            </EndProperty>
+            <EndProperty Name="CambioMaterialEstudiante">
+              <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="IdPromocion" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CambioMaterialEstudiante_TipoMaterial" TypeName="TEColonesModel.FK_CambioMaterialEstudiante_TipoMaterial" StoreEntitySet="CambioMaterialEstudiante">
+            <EndProperty Name="TipoMaterial">
+              <ScalarProperty Name="IdTipoMaterial" ColumnName="IdTipoMaterial" />
+            </EndProperty>
+            <EndProperty Name="CambioMaterialEstudiante">
+              <ScalarProperty Name="IdCambioMaterialEstudiante" ColumnName="IdCambioMaterialEstudiante" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CentroAcopio_SedeXTEC" TypeName="TEColonesModel.FK_CentroAcopio_SedeXTEC" StoreEntitySet="CentroAcopio">
+            <EndProperty Name="SedeXTEC">
+              <ScalarProperty Name="IdSedeXTEC" ColumnName="IdSedeXTEC" />
+            </EndProperty>
+            <EndProperty Name="CentroAcopio">
+              <ScalarProperty Name="IdCentroAcopio" ColumnName="IdCentroAcopio" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_EncargadoCentroAcopio_CentroAcopio" TypeName="TEColonesModel.FK_EncargadoCentroAcopio_CentroAcopio" StoreEntitySet="EncargadoCentroAcopio">
+            <EndProperty Name="CentroAcopio">
+              <ScalarProperty Name="IdCentroAcopio" ColumnName="IdCentroAcopio" />
+            </EndProperty>
+            <EndProperty Name="EncargadoCentroAcopio">
+              <ScalarProperty Name="IdEncargadoCentroAcopio" ColumnName="IdEncargadoCentroAcopio" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_EncargadoCentroAcopio_InformacionBasica" TypeName="TEColonesModel.FK_EncargadoCentroAcopio_InformacionBasica" StoreEntitySet="EncargadoCentroAcopio">
+            <EndProperty Name="InformacionBasica">
+              <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+            </EndProperty>
+            <EndProperty Name="EncargadoCentroAcopio">
+              <ScalarProperty Name="IdEncargadoCentroAcopio" ColumnName="IdEncargadoCentroAcopio" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Estudiante_InformacionBasica" TypeName="TEColonesModel.FK_Estudiante_InformacionBasica" StoreEntitySet="Estudiante">
+            <EndProperty Name="InformacionBasica">
+              <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+            </EndProperty>
+            <EndProperty Name="Estudiante">
+              <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Estudiante_SedeXTEC" TypeName="TEColonesModel.FK_Estudiante_SedeXTEC" StoreEntitySet="Estudiante">
+            <EndProperty Name="SedeXTEC">
+              <ScalarProperty Name="IdSedeXTEC" ColumnName="IdSedeXTEC" />
+            </EndProperty>
+            <EndProperty Name="Estudiante">
+              <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_InformacionBasica_TipoRol" TypeName="TEColonesModel.FK_InformacionBasica_TipoRol" StoreEntitySet="InformacionBasica">
+            <EndProperty Name="TipoRol">
+              <ScalarProperty Name="IdTipoRol" ColumnName="IdTipoRol" />
+            </EndProperty>
+            <EndProperty Name="InformacionBasica">
+              <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_InformacionBasicaContacto_InformacionBasica" TypeName="TEColonesModel.FK_InformacionBasicaContacto_InformacionBasica" StoreEntitySet="InformacionBasicaContacto">
+            <EndProperty Name="InformacionBasica">
+              <ScalarProperty Name="IdInformacionBasica" ColumnName="IdInformacionBasica" />
+            </EndProperty>
+            <EndProperty Name="InformacionBasicaContacto">
+              <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_InformacionBasicaContacto_TipoContacto" TypeName="TEColonesModel.FK_InformacionBasicaContacto_TipoContacto" StoreEntitySet="InformacionBasicaContacto">
+            <EndProperty Name="TipoContacto">
+              <ScalarProperty Name="IdTipoContacto" ColumnName="IdTipoContacto" />
+            </EndProperty>
+            <EndProperty Name="InformacionBasicaContacto">
+              <ScalarProperty Name="IdContacto" ColumnName="IdContacto" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="ActualizarTipo" FunctionName="TEColonesModel.Store.ActualizarTipo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.ActualizarTipo_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CambioBeneficio" FunctionName="TEColonesModel.Store.CambioBeneficio">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.CambioBeneficio_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CambioMaterial" FunctionName="TEColonesModel.Store.CambioMaterial">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.CambioMaterial_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarAdministrador" FunctionName="TEColonesModel.Store.InsertarAdministrador">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarAdministrador_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarAdministradorAcopio" FunctionName="TEColonesModel.Store.InsertarAdministradorAcopio">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarAdministradorAcopio_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarCentroAcopio" FunctionName="TEColonesModel.Store.InsertarCentroAcopio">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarCentroAcopio_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarContacto" FunctionName="TEColonesModel.Store.InsertarContacto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarContacto_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarDepartamento" FunctionName="TEColonesModel.Store.InsertarDepartamento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarDepartamento_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarEstudiante" FunctionName="TEColonesModel.Store.InsertarEstudiante">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarEstudiante_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarInformacionBasica" FunctionName="TEColonesModel.Store.InsertarInformacionBasica">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarInformacionBasica_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarSedeXTEC" FunctionName="TEColonesModel.Store.InsertarSedeXTEC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarSedeXTEC_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarTipoContacto" FunctionName="TEColonesModel.Store.InsertarTipoContacto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarTipoContacto_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertarTipoRol" FunctionName="TEColonesModel.Store.InsertarTipoRol">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.InsertarTipoRol_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NuevaPromocion" FunctionName="TEColonesModel.Store.NuevaPromocion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.NuevaPromocion_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NuevoTipoBeneficio" FunctionName="TEColonesModel.Store.NuevoTipoBeneficio">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.NuevoTipoBeneficio_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NuevoTipoMaterial" FunctionName="TEColonesModel.Store.NuevoTipoMaterial">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.NuevoTipoMaterial_Result">
+                <ScalarProperty Name="ErrorProcedimiento" ColumnName="ErrorProcedimiento" />
+                <ScalarProperty Name="TipoError" ColumnName="TipoError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Tacometro" FunctionName="TEColonesModel.Store.Tacometro" />
+          <FunctionImportMapping FunctionImportName="ColumnaSimple" FunctionName="TEColonesModel.Store.ColumnaSimple">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.ColumnaSimple_Result">
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="PesoTotal" ColumnName="PesoTotal" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FilaApilada" FunctionName="TEColonesModel.Store.FilaApilada">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.FilaApilada_Result">
+                <ScalarProperty Name="NombreBeneficio" ColumnName="NombreBeneficio" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TOP10" FunctionName="TEColonesModel.Store.TOP10">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.TOP10_Result">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Carnet" ColumnName="Carnet" />
+                <ScalarProperty Name="NombreSedeXTEC" ColumnName="NombreSedeXTEC" />
+                <ScalarProperty Name="Cantidad_Material" ColumnName="Cantidad Material" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TEColonesEntregados" FunctionName="TEColonesModel.Store.TEColonesEntregados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.TEColonesEntregados_Result">
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Puntos" ColumnName="Puntos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ToneladasSede" FunctionName="TEColonesModel.Store.ToneladasSede">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TEColonesModel.ToneladasSede_Result">
+                <ScalarProperty Name="Sede" ColumnName="Sede" />
+                <ScalarProperty Name="PesoTotal" ColumnName="PesoTotal" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
